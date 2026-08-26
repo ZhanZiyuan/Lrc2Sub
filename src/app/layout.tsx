@@ -1,11 +1,30 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { ThemeProvider } from '@/components/theme-provider';
-import { Toaster } from '@/components/ui/toaster';
+import type { Metadata, Viewport } from "next";
+import { LanguageProvider } from "@/components/language-provider";
+import { PwaRegister } from "@/components/pwa-register";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Lyrics to Subtitles',
-  description: 'Convert LRC lyric files to SRT subtitle files with ease.',
+  title: "Lyrics to Subtitles",
+  description: "Convert LRC lyric files to SRT subtitle files with ease.",
+  applicationName: "Lyrics to Subtitles",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Lyrics to Subtitles",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f0f0f0" },
+    { media: "(prefers-color-scheme: dark)", color: "#242426" },
+  ],
 };
 
 export default function RootLayout({
@@ -29,8 +48,11 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <ThemeProvider storageKey="lyrics-converter-theme">
-          {children}
-          <Toaster />
+          <LanguageProvider>
+            {children}
+            <Toaster />
+            <PwaRegister />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

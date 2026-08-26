@@ -24,14 +24,19 @@ Built with modern web technologies for a smooth user experience.
 - **Instant Preview**: View the content of your LRC files and the converted SRT subtitles directly in the browser.
 - **Encoding Support**: Download your SRT files in standard UTF-8 or UTF-8 with BOM (Byte Order Mark) for better compatibility with various players.
 - **Privacy Focused**: All processing happens client-side. Your files are never uploaded to a server.
-- **Modern UI**: Clean and responsive interface with Dark Mode support.
+- **Multilingual**: Supports English, Simplified Chinese, Traditional Chinese, and Japanese, with automatic browser-language detection.
+- **System-aware Theme**: Follows your device theme by default and supports instant light/dark switching.
+- **Installable PWA**: Install the converter and keep using it offline after the first visit.
+- **Modern UI**: Clean and responsive interface built with Shadcn/UI.
 
 ## Tech Stack
 
-- [Next.js](https://nextjs.org/) - React Framework
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Next.js 16](https://nextjs.org/) and [React 19](https://react.dev/) - Application framework and UI runtime
+- [TypeScript](https://www.typescriptlang.org/) - Strictly typed application code
+- [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS framework
 - [Shadcn/UI](https://ui.shadcn.com/) - Re-usable components
 - [Lucide React](https://lucide.dev/) - Icons
+- [Biome](https://biomejs.dev/) - Formatting and linting
 
 ## Getting Started
 
@@ -60,7 +65,7 @@ Ensure you have Node.js installed on your system.
    npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:9002](http://localhost:9002) with your browser to see the result.
 
 ## License
 
